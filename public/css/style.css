@@ -1,0 +1,137 @@
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+}
+
+/* New Page */
+.add-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* Edid Page */
+.edit-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* Navbar Section */
+.navbar {
+    height: 4rem;
+    background-color: white;
+}
+
+.navbar-brand i, 
+.navbar-brand b {
+    color: #fe424d;
+    font-size: 1.7rem;
+}
+
+.nav-link {
+    color: #222222 !important;
+}
+
+/* Footer Section */
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+}
+
+.f-info-links, 
+.f-info-socials{
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+.f-info-socials i {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+}
+
+.f-info div,
+.f-info-socials i,
+.f-info-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.f-info {
+    display: flex;
+    height: 8rem;
+    
+    background: 
+      radial-gradient(calc(1.28*25px + 9.38px/2) at left 50% bottom calc(-.8*25px),#d2d2d2 calc(100% - 9.38px),#cbcbcb calc(101% - 9.38px) 100%,#0000 101%) calc(2*25px) calc(-1*calc(1.5*25px + 9.38px)),
+      radial-gradient(calc(1.28*25px + 9.38px/2) at left 50% bottom calc(-.8*25px),#dddddd calc(100% - 9.38px),#cbcbcb calc(101% - 9.38px) 100%,#0000 101%) calc(-1*25px) calc(calc(1.5*25px + 9.38px)/-2),
+      radial-gradient(calc(1.28*25px + 9.38px/2) at left 50% top    calc(-.8*25px),#dddddd calc(100% - 9.38px),#cbcbcb calc(101% - 9.38px) 100%,#0000 101%) 0 calc(1.5*25px + 9.38px),
+      radial-gradient(calc(1.28*25px + 9.38px/2) at left 50% top    calc(-.8*25px),#d2d2d2 calc(100% - 9.38px),#cbcbcb calc(101% - 9.38px) 100%,#0000 101%) 25px calc(calc(1.5*25px + 9.38px)/ 2),
+      linear-gradient(#d2d2d2 50%,#dddddd 0);
+    background-size: calc(4*25px) calc(1.5*25px + 9.38px);
+
+    border-top: 1px solid rgb(67, 67, 67);
+    background-color: #ebebeb ;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+    text-align: center;
+}
+
+/* Cards */
+.card {
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-text {
+    font-weight: 400;
+}
+
+.list-link {
+    text-decoration: none;
+}
+
+/* Card Effect */
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    opacity: 0.2;
+    background-color: white;
+}
+
+/* Show Page */
+
+.show-img {
+    height: 30vh;
+}
+
+.btns{
+    display: flex;
+}
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
+}
