@@ -70,7 +70,6 @@ body {
 .f-info {
     display: flex;
     height: 8rem;
-    
     background: 
       radial-gradient(calc(1.28*25px + 9.38px/2) at left 50% bottom calc(-.8*25px),#d2d2d2 calc(100% - 9.38px),#cbcbcb calc(101% - 9.38px) 100%,#0000 101%) calc(2*25px) calc(-1*calc(1.5*25px + 9.38px)),
       radial-gradient(calc(1.28*25px + 9.38px/2) at left 50% bottom calc(-.8*25px),#dddddd calc(100% - 9.38px),#cbcbcb calc(101% - 9.38px) 100%,#0000 101%) calc(-1*25px) calc(calc(1.5*25px + 9.38px)/-2),
@@ -78,7 +77,6 @@ body {
       radial-gradient(calc(1.28*25px + 9.38px/2) at left 50% top    calc(-.8*25px),#d2d2d2 calc(100% - 9.38px),#cbcbcb calc(101% - 9.38px) 100%,#0000 101%) 25px calc(calc(1.5*25px + 9.38px)/ 2),
       linear-gradient(#d2d2d2 50%,#dddddd 0);
     background-size: calc(4*25px) calc(1.5*25px + 9.38px);
-
     border-top: 1px solid rgb(67, 67, 67);
     background-color: #ebebeb ;
     flex-wrap: wrap;
@@ -88,7 +86,7 @@ body {
 }
 
 /* Cards */
-.card {
+.listing-card {
     border: none !important;
     margin-bottom: 2rem;
 }
@@ -122,16 +120,32 @@ body {
 }
 
 /* Show Page */
-
 .show-img {
-    height: 30vh;
+    height: 40vh;
 }
 
-.btns{
+.btns {
     display: flex;
 }
 
 .show-card {
     padding-left: 0;
     padding-right: 0;
+}
+
+/* Review Section */
+.review-card {
+    border: none !important;
+    background-image: 
+    radial-gradient(circle at 100% 100%, transparent 11px, #d60000 11px, #d60000 13px, transparent 13px), 
+    linear-gradient(to right, #d60000, #0025fa), 
+    radial-gradient(circle at 0% 100%, transparent 11px, #0025fa 11px, #0025fa 13px, transparent 13px), 
+    linear-gradient(to bottom, #0025fa, #0025fa), 
+    radial-gradient(circle at 0% 0%, transparent 11px, #0025fa 11px, #0025fa 13px, transparent 13px), 
+    linear-gradient(to left, #0025fa, #ff0000), 
+    radial-gradient(circle at 100% 0%, transparent 11px, #ff0000 11px, #ff0000 13px, transparent 13px), 
+    linear-gradient(to top, #ff0000, #d60000);
+    background-size: 13px 13px, calc(100% - 26px) 2px, 13px 13px, 2px calc(100% - 26px);
+    background-position: top left,top center,top right,center right, bottom right,bottom center,bottom left,center left;
+    background-repeat: no-repeat;
 }
