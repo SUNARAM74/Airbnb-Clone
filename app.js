@@ -5,10 +5,15 @@ const path = require('path');
 const methodOverride = require('method-override');
 const engine = require('ejs-mate');
 const ExError = require("./utils/ExError.js");
-const listings = require('./routes/listing.js');
-const reviews = require('./routes/review.js');
+const listingRouter = require('./routes/listing.js');
+const reviewRouter = require('./routes/review.js');
+const userRouter = require('./routes/user.js');
 const session = require('express-session');
 const flash = require('connect-flash');
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
+const User = require('./models/user.js');
+
 
 const Mongo_url = "mongodb://127.0.0.1:27017/Airbnb";
 
@@ -52,6 +57,15 @@ app.get("/", (req, res) => {
 app.use(session( sessionOption ));
 app.use(flash());
 
+// Passport Middleware ↓
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+
+// use static serialize and deserialize of model for passport session support
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 // Connect-flash Define Middlewere ↓
 app.use((req, res, next) => {
     res.locals.errorMsg = req.flash("error");
@@ -59,9 +73,20 @@ app.use((req, res, next) => {
     next();
 });
 
+// Demo Register
+// app.get("/demouser", async(req, res) => {
+//     let fuser = new User ({
+//         email: "suna@gmail.ocm",
+//         username: "sunax"
+//     });
+//     let regUser = await User.register(fuser, "helloworld");
+//     res.send(regUser);
+// });
+
 // Router Middle Ware ↓
-app.use("/listings", listings);
-app.use("/listings", reviews);
+app.use("/listings", listingRouter);
+app.use("/listings", reviewRouter);
+app.use("/", userRouter);
 
 // Random Page Error Handling Middle Ware ↓
 app.all("*", (req, res, next) => {
