@@ -3,6 +3,14 @@ const Review = require('./models/review.js');
 const { listingSchema, reviewSchema } = require('./schema.js');
 const ExError = require('./utils/ExError.js');
 
+// Redirect Url Save Middleware ↓ (routes -> user.js)
+module.exports.saveRedirectUrl = (req, res, next) => {
+    if(req.session.redirectUrl) {
+        res.locals.redirectUrl = req.session.redirectUrl
+    }
+    next();
+};
+
 // Log in chacked Middleware ↓ (routes -> listing.js)
 module.exports.isLoggedIn = (req, res, next) => {
     // console.log(req.path, "...", req.originalUrl);
@@ -10,14 +18,6 @@ module.exports.isLoggedIn = (req, res, next) => {
         req.session.redirectUrl = req.originalUrl
         req.flash("error", "You must be logged in to create listing..!")
         return res.redirect("/login")
-    }
-    next();
-};
-
-// Redirect Url Save Middleware ↓ (routes -> user.js)
-module.exports.saveRedirectUrl = (req, res, next) => {
-    if(req.session.redirectUrl) {
-        res.locals.redirectUrl = req.session.redirectUrl
     }
     next();
 };

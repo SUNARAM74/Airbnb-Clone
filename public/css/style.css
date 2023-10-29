@@ -149,3 +149,11 @@ body {
     background-position: top left,top center,top right,center right, bottom right,bottom center,bottom left,center left;
     background-repeat: no-repeat;
 }
+
+
+/* MAP */
+#map { 
+
+    height: 400px;
+    width: 130vh;
+ }
